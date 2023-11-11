@@ -25,9 +25,29 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffff;
 }
-
+.nav{
+  background-color: #190482;
+}
+.navbar_wrapper a {
+  padding-left: 30px;
+  color: white;
+  text-decoration: none;
+}
+.btn {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn.Delete {
+  color: white;
+  background-color: red;
+}
+.btn.Update {
+  background-color: green;
+  color: white;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

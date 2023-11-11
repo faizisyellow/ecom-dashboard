@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import logo from "./logo.svg";
+import "./App.css";
+// import Header from "./header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Addproducts from "./addProducts";
+import Updateproducts from "./updateProducts";
+import Register from "./register";
+import Login from "./login";
+import Protected from "./protected";
+import ProductList from "./productList";
+import SearchProduct from "./searchProduct";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/addProducts" element={<Protected Cmp={Addproducts} />} />
+          <Route path="/updateProducts/:id" element={<Protected Cmp={Updateproducts} />} />
+          <Route path="/search" element={<Protected Cmp={SearchProduct} />} />
+          <Route path="/" element={<Protected Cmp={ProductList} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
